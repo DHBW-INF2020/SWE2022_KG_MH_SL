@@ -1,0 +1,12 @@
+<channels>
+    <channel name="Das Erste">
+        <satellites>
+            <sat name="Astra 1N" orbital="19.2° E"/>
+            <sat name="Intelsat 20" orbital="68.5° E"/>
+        </satellites>
+    </channel>
+    <channel name="ZDF HD">
+            <sat name="Astra 4A" orbital="4.8 ° E"/>
+            <sat name="Astra 1KR" orbital="4.8° E"/>
+    </channel
+</channels>

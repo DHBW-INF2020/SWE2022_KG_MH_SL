@@ -1,0 +1,34 @@
+[
+    {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E",
+        "transponder":[
+            {
+                "pol": "H",
+                "freq": "12072",
+                "sym": "30000"
+            },
+            {
+                "pol": "H",
+                "freq": "12188",
+                "sym": "30000"
+            }
+        ]
+    },
+    {
+        "sat": "Astra 1M",
+        "orbital": "19.2° E",
+        "transponder":[
+            {
+                "pol": "H",
+                "freq": "12011",
+                "sym": "30000"
+            },
+            {
+                "pol": "H",
+                "freq": "12288",
+                "sym": "30000"
+            }
+        ]
+    }
+]

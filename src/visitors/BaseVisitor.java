@@ -2,11 +2,17 @@ package visitors;
 
 import tree.Channel;
 import tree.Node;
+import tree.Root;
 import tree.Satellite;
 import tree.Transponder;
 
 public class BaseVisitor<T> implements Visitor{
 
+	@Override
+	public T visitRoot(Root r) {
+		return visitChildren(r);
+	}
+	
 	@Override
 	public T visitSatellite(Satellite s) {
 		return visitChildren(s);

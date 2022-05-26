@@ -18,7 +18,10 @@ public abstract class Node {
 		}
 	}
 
-	protected List<Node> children() {
+	public List<Node> children() {
+		if(children != null) {
+			return children;
+		}
 		return Collections.emptyList();
 	}
 }

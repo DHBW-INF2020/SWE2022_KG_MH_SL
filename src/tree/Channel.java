@@ -8,7 +8,7 @@ public class Channel extends Node{
 
 	@Override
 	public <T> T accept(Visitor<T> v) {
-		// TODO Auto-generated method stub
+		v.visitChannel(this);
 		return null;
 	}
 

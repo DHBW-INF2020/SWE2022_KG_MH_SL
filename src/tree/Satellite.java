@@ -6,9 +6,10 @@ public class Satellite extends Node{
     
     String sat;
     String orbital;
+    
 	@Override
 	public <T> T accept(Visitor<T> v) {
-		// TODO Auto-generated method stub
+		v.visitSatellite(this);
 		return null;
 	}
 

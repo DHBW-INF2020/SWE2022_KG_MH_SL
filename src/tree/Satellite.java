@@ -4,8 +4,13 @@ import visitors.Visitor;
 
 public class Satellite extends Node{
     
-    String sat;
-    String orbital;
+    private String sat;
+    private String orbital;
+    
+    public Satellite(String sat, String orbital) {
+    	this.sat = sat;
+    	this.orbital = orbital;
+    }
     
 	@Override
 	public <T> T accept(Visitor<T> v) {

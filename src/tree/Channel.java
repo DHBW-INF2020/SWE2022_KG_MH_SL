@@ -4,7 +4,11 @@ import visitors.Visitor;
 
 public class Channel extends Node{
     
-    String name;
+    private String name;
+    
+    public Channel(String name) {
+    	this.name = name;
+    }
 
 	@Override
 	public <T> T accept(Visitor<T> v) {

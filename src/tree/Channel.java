@@ -9,11 +9,14 @@ public class Channel extends Node{
     public Channel(String name) {
     	this.name = name;
     }
+    
+    public Channel(Channel c) {
+    	this.name = c.name;
+    }
 
 	@Override
 	public <T> T accept(Visitor<T> v) {
-		v.visitChannel(this);
-		return null;
+		return v.visitChannel(this);
 	}
 
 }

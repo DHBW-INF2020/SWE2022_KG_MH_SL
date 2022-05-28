@@ -14,9 +14,14 @@ public class Transponder extends Node {
     	this.sym = sym;
     }
     
+    public Transponder(Transponder t) {
+    	this.pol = t.pol;
+    	this.freq = t.freq;
+    	this.sym = t.sym;
+    }
+    
 	@Override
 	public <T> T accept(Visitor<T> v) {
-		v.visitTransponder(this);
-		return null;
+		return v.visitTransponder(this);
 	}
 }

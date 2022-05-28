@@ -12,10 +12,14 @@ public class Satellite extends Node{
     	this.orbital = orbital;
     }
     
+    public Satellite(Satellite s) {
+    	this.sat = s.sat;
+    	this.orbital = s.orbital;
+    }
+    
 	@Override
 	public <T> T accept(Visitor<T> v) {
-		v.visitSatellite(this);
-		return null;
+		return v.visitSatellite(this);
 	}
 
 }

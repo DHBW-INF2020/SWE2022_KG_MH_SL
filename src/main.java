@@ -1,9 +1,41 @@
 
 import com.google.gson.Gson;
 
-public class main {
-    public static void main(String[]Args){
+import aggregates.SatelliteTransportsAggregate;
+import tree.Channel;
+import tree.Root;
+import tree.Satellite;
+import tree.Transponder;
 
+public class main {
+	
+	public static Root buildExampleTree() {
+		Root root = new Root();
+		Satellite sat = new Satellite("sat1", "orb1");
+		Transponder tr1 = new Transponder("pol1", "freq1", "sym1");
+		Transponder tr2 = new Transponder("pol2", "freq2", "sym2");
+		Channel ch1 = new Channel("ch1");
+		Channel ch2 = new Channel("ch2");
+		Channel ch3 = new Channel("ch3");
+		Channel ch4 = new Channel("ch4");
+		tr1.addNode(ch1);
+		tr1.addNode(ch2);
+		tr2.addNode(ch3);
+		tr2.addNode(ch4);
+		sat.addNode(tr1);
+		sat.addNode(tr2);
+		root.addNode(sat);
+		return root;
+	}
+	
+	public static void testAggregate() {
+    	SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
+    	Root root = main.buildExampleTree();
+    	Root returnTree = (Root) root.accept(sta);
+	}
+	
+    public static void main(String[]Args){
+    	main.testAggregate();
         // Creating an object of Gson class
         Gson gson = new Gson();
         // Creating an object of Employee class

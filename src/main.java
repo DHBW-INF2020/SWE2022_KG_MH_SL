@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
@@ -7,8 +9,17 @@ import tree.Root;
 import tree.Satellite;
 import tree.Transponder;
 
+//----------- IO Import ----------
+import java.io.Reader;
+import java.io.IOException;
+import java.io.FileReader;
+import java.util.Arrays;
+import java.util.Objects;
+
 public class main {
-	
+
+    //--------------------------- buildExampleTree() -----------------------
+
 	public static Root buildExampleTree() {
 		Root root = new Root();
 		Satellite sat = new Satellite("sat1", "orb1");
@@ -27,44 +38,130 @@ public class main {
 		root.addNode(sat);
 		return root;
 	}
-	
+
+    //--------------------------- testAggregate() -----------------------
+
 	public static void testAggregate() {
     	SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
     	Root root = main.buildExampleTree();
     	Root returnTree = (Root) root.accept(sta);
 	}
-	
-    public static void main(String[]Args){
-    	main.testAggregate();
-        // Creating an object of Gson class
+
+    //--------------------------- openAndReadJson() -----------------------
+
+    public static void openAndReadJson(){
+        // Dummie Class "Trans_and_Sat" is needed for Gson to parse the json to the right structure
         Gson gson = new Gson();
-        // Creating an object of Employee class
-        Employee emp = new Employee();
 
-        // Attributes
-        emp.setName("John");
-        emp.setId("E00101");
-        emp.setDepartment("IT");
-        emp.setSalary(250000.00);
-        emp.setRating(7);
+        try(Reader reader = new FileReader("D:\\Java\\SWE2022_KG_MH_SL\\res\\Aufgabe 3 satellites.json")){
+            // Parse the JSON
+            Trans_and_Sat[] sat = gson.fromJson(reader, Trans_and_Sat[].class);
 
-        // Generating json from emp object
-        String empJson = gson.toJson(emp);
-        System.out.println("Emp json is " + empJson);
+            // create Tree
 
-        // Changing one of the attributes of emp object
-        emp.setDepartment("Java");
+            Root root =new Root();
 
-        // Generating emp object from emp json
-        Employee empGenerated = gson.fromJson(
-                gson.toJson(emp), Employee.class);
+            ArrayList<Satellite> satellites = new ArrayList<Satellite>();
+            ArrayList<Transponder> transponders = new ArrayList<Transponder>();
 
-        // Print and display the employee been generated
-        System.out.println(
-                "Generated employee from json is "
-                + empGenerated);
+            //jsonHirarchieBottom testBot;
+            //jsonHirarchieTop testTop;
+
+            String current_sat = sat[0].getSat_name();
+            String previous_sat = sat[0].getSat_name();
+
+
+
+            int j = 0;
+
+            Satellite new_sat = new Satellite(sat[j].getSat_name(),sat[j].getOrbital());
+
+            System.out.println(sat.length);
+            do{
+                //System.out.println(j); // just for debugging
+                if(!Objects.equals(current_sat, previous_sat))
+                {
+                    new_sat = new Satellite(sat[j].getSat_name(),sat[j].getOrbital());
+
+                    // not really necessary
+                    satellites.add(new_sat);
+
+                    root.addNode(new_sat);
+
+                    previous_sat = current_sat;
+                }
+                if(Objects.equals(previous_sat, current_sat))
+                {
+                    Transponder new_transponder = new Transponder(sat[j].getPol(),sat[j].getFreq(),sat[j].getSym());
+                    // not really necessary
+                    transponders.add(new_transponder);
+
+                    // append transponder to
+
+                    new_sat.addNode(new_transponder);
+                }
+
+                j++;
+                current_sat = sat[j].getSat_name();
+            }while(j+1 < sat.length);
+
+            // some output for testing
+            System.out.println(Arrays.toString(sat));
+            System.out.println(sat.length);
+            for(int i = 0;i<60;i++)
+            {
+                System.out.println(sat[i].getSat_name());
+            }
+
+            SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
+            Root returnTree = (Root) root.accept(sta);
+
+            gson.toJson(returnTree, new FileWriter("D:\\Java\\SWE2022_KG_MH_SL\\output\\output.json"));
+
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
+
+    }
+
+    //--------------------------- main(Sting[]Args) -----------------------
+
+    public static void main(String[]Args){
+    	//main.testAggregate();
+        // es sind 3031 Transpoder - SatKombinationen
+        main.openAndReadJson();
     }
 }
+
+class Trans_and_Sat {
+    private String sat;
+    private String orbital;
+    private String pol;
+    private String freq;
+    private String sym;
+    private ArrayList<tree.Channel> channels;
+
+    public String getSat_name() {return sat;}
+    public String getOrbital() {return orbital;}
+    public String getPol() {return pol;}
+    public String getFreq() {return freq;}
+    public String getSym() {return sym;}
+    public ArrayList<Channel> getChannels() {return channels;}
+}
+
+
+// nicht verwendet
+class jsonHirarchieTop{
+    private Satellite sat;
+    private ArrayList<jsonHirarchieBottom> TransponderList;
+}
+
+// nicht verwendet
+class jsonHirarchieBottom{
+    private Transponder trans;
+    private ArrayList<Channel> ChannelList;
+}
+
 
 class Employee {
 

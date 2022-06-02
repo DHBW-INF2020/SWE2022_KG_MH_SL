@@ -15,8 +15,10 @@ public class Export {
         try {
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(formated_tree, new FileWriter("./output/output.json"));
-
+            FileWriter fileWriter = new FileWriter("./output/output.json");
+            gson.toJson(formated_tree, fileWriter);
+            //If anything left in buffer, write the rest to the file
+            fileWriter.flush();
         } 
         catch (IOException e) {
             System.out.println("An error occurred.");

@@ -57,47 +57,38 @@ public class main {
             // Parse the JSON
             Trans_and_Sat[] sat = gson.fromJson(reader, Trans_and_Sat[].class);
 
-            // create Tree
-
+            // create Tree Root
             Root root = new Root();
 
-            ArrayList<Satellite> satellites = new ArrayList<Satellite>();
-            ArrayList<Transponder> transponders = new ArrayList<Transponder>();
-
-            //jsonHirarchieBottom testBot;
-            //jsonHirarchieTop testTop;
-
+            // create helpers
             String current_sat = sat[0].getSat_name();
             String previous_sat = sat[0].getSat_name();
-
-
-
             int j = 0;
 
+            // new sat is needed for first loop
             Satellite new_sat = new Satellite(sat[j].getSat_name(),sat[j].getOrbital());
 
-            System.out.println(sat.length);
+            // do, for all satellites in given json
             do{
-                //System.out.println(j); // just for debugging
+                // if there is a new/another sat create it and append to root
                 if(!Objects.equals(current_sat, previous_sat))
                 {
                     new_sat = new Satellite(sat[j].getSat_name(),sat[j].getOrbital());
-
-                    // not really necessary
-                    satellites.add(new_sat);
-
                     root.addNode(new_sat);
-
                     previous_sat = current_sat;
                 }
+                // if the sat isnt new create and append the current transponder with all its Channels
                 if(Objects.equals(previous_sat, current_sat))
                 {
                     Transponder new_transponder = new Transponder(sat[j].getPol(),sat[j].getFreq(),sat[j].getSym());
-                    // not really necessary
-                    transponders.add(new_transponder);
-
                     // append transponder to
+                    ArrayList<Channel> channel_list= sat[j].getChannels();
 
+                    // append channel to transponder
+                    for (Channel channel : channel_list) {
+                        Channel new_channel = new Channel(channel.getName());
+                        new_transponder.addNode(new_channel);
+                    }
                     new_sat.addNode(new_transponder);
                 }
 
@@ -105,19 +96,11 @@ public class main {
                 current_sat = sat[j].getSat_name();
             }while(j+1 < sat.length);
 
-            // some output for testing
-            System.out.println(Arrays.toString(sat));
-            System.out.println(sat.length);
-            for(int i = 0;i<60;i++)
-            {
-                System.out.println(sat[i].getSat_name());
-            }
 
             SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
             Root returnTree = (Root) root.accept(sta);
-            
-            
-            Export.as_JSON(returnTree);
+
+            Export.as_JSON(root);
 
             Export.as_XML(returnTree);
 

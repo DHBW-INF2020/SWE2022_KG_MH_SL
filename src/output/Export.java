@@ -35,11 +35,7 @@ public class Export {
             writer.close();
 
         } 
-        catch (JSONException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        catch (IOException e) {
+        catch (JSONException | IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }

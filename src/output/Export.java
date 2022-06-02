@@ -1,40 +1,47 @@
 package output;
 
-import java.io.File;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.json.JSONObject;  
+import org.json.XML;  
 import java.io.FileWriter; 
 import java.io.IOException;
-//import org.json.JSONException;  
-//import org.json.JSONObject;  
-//import org.json.XML;
+import org.json.JSONException;  
+import tree.Root;
 
 public class Export {
 
-    String format;
-    //JSONObject jsonObject = new JSONObject();
-
-    public void export_as_JSON(){
+    public static void as_JSON(Root formated_tree){
         try {
-            File myJSONfile = new File("output.json");
-            FileWriter myWriter = new FileWriter("output.json");
-            //myWriter.write(jsonObject.toJSONString());
-            myWriter.close();
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(formated_tree, new FileWriter("./output/output.json"));
+
         } 
         catch (IOException e) {
-        System.out.println("An error occurred.");
-        e.printStackTrace();
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
     }
 
-    public void export_as_XML(){
+    public static void as_XML(Root formated_tree){
         try {
-            File myJSONfile = new File("output.xml");
-            FileWriter myWriter = new FileWriter("output.xml");
-            //myWriter.write(jsonObject.toJSONString());
-            myWriter.close();
+            Gson gson = new GsonBuilder().create();
+            JSONObject json = new JSONObject(gson.toJson(formated_tree));
+            
+            String xml = XML.toString(json);
+            FileWriter writer = new FileWriter("./output/output.xml");
+            writer.write(xml);
+            writer.close();
+
         } 
+        catch (JSONException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
         catch (IOException e) {
-        System.out.println("An error occurred.");
-        e.printStackTrace();
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
     }
 }

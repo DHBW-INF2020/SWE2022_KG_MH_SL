@@ -1,4 +1,3 @@
-import java.io.FileWriter;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
@@ -8,6 +7,7 @@ import tree.Channel;
 import tree.Root;
 import tree.Satellite;
 import tree.Transponder;
+import output.Export;
 
 //----------- IO Import ----------
 import java.io.Reader;
@@ -53,13 +53,13 @@ public class main {
         // Dummie Class "Trans_and_Sat" is needed for Gson to parse the json to the right structure
         Gson gson = new Gson();
 
-        try(Reader reader = new FileReader("D:\\Java\\SWE2022_KG_MH_SL\\res\\Aufgabe 3 satellites.json")){
+        try(Reader reader = new FileReader("./res/Aufgabe_3_satellites.json")){
             // Parse the JSON
             Trans_and_Sat[] sat = gson.fromJson(reader, Trans_and_Sat[].class);
 
             // create Tree
 
-            Root root =new Root();
+            Root root = new Root();
 
             ArrayList<Satellite> satellites = new ArrayList<Satellite>();
             ArrayList<Transponder> transponders = new ArrayList<Transponder>();
@@ -115,8 +115,12 @@ public class main {
 
             SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
             Root returnTree = (Root) root.accept(sta);
+            
+            
+            Export.as_JSON(returnTree);
 
-            gson.toJson(returnTree, new FileWriter("D:\\Java\\SWE2022_KG_MH_SL\\output\\output.json"));
+            Export.as_XML(returnTree);
+
 
         }catch (IOException exception){
             exception.printStackTrace();
@@ -160,76 +164,4 @@ class jsonHirarchieTop{
 class jsonHirarchieBottom{
     private Transponder trans;
     private ArrayList<Channel> ChannelList;
-}
-
-
-class Employee {
-
-    // Member variables of this class
-    private String id;
-    private String name;
-    private String department;
-    private int rating;
-    private double salary;
-
-    // Member functions of this class
-
-    // Method 1
-    public String getId() {
-        return id;
-    }
-
-    // Method 2
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    // Method 3
-    public String getName() {
-        return name;
-    }
-
-    // Method 4
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    // Method 5
-    public String getDepartment() {
-        return department;
-    }
-
-    // Method 6
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    // Method 7
-    public int getRating() {
-        return rating;
-    }
-
-    // Method 8
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
-    // Method 9
-    public double getSalary() {
-        return salary;
-    }
-
-    // Method 10
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    // Method  11
-    @Override
-    public String toString() {
-        return "Employee [id=" + id + ", name=" + name
-                + ", department=" + department + ", rating="
-                + rating + ", salary=" + salary + "]";
-    }
-
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
-import aggregates.SatelliteTransportsAggregate;
+import aggregates.SatelliteTranspondersAggregate;
 import tree.Channel;
 import tree.Root;
 import tree.Satellite;
@@ -42,7 +42,7 @@ public class main {
     //--------------------------- testAggregate() -----------------------
 
 	public static void testAggregate() {
-    	SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
+    	SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
     	Root root = main.buildExampleTree();
     	Root returnTree = (Root) root.accept(sta);
 	}
@@ -100,7 +100,7 @@ public class main {
             }while(j+1 < sat.length);
 
 
-            SatelliteTransportsAggregate sta = new SatelliteTransportsAggregate();
+            SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
             Root returnTree = (Root) root.accept(sta);
 
             Export.as_JSON(root);

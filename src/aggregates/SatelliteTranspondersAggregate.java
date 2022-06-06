@@ -6,7 +6,7 @@ import tree.Satellite;
 import tree.Transponder;
 import visitors.BaseVisitor;
 
-public class SatelliteTransportsAggregate extends BaseVisitor<Node>{
+public class SatelliteTranspondersAggregate extends BaseVisitor<Node>{
 	
 	@Override
 	public Node visitRoot(Root r) {

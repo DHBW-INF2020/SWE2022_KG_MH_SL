@@ -67,7 +67,10 @@ public class main {
 
             // new sat is needed for first loop
             Satellite new_sat = new Satellite(sat[j].getSat_name(),sat[j].getOrbital());
-
+            
+            // add the first new Satellite to the root Node
+            root.addNode(new_sat);
+            
             // do, for all satellites in given json
             do{
                 // if there is a new/another sat create it and append to root

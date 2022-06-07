@@ -24,7 +24,7 @@ public class TreeToJsonConverter extends BaseVisitor<StringBuilder> {
 	private StringBuilder convertNodeToJson(Node node) {
 		StringBuilder stringBuilder = new StringBuilder(node.toJson());
 		if(!node.children().isEmpty()) {
-			stringBuilder.append(",\n\"" + node.children().get(0).getClass().getSimpleName() + "s\": [\n");
+			stringBuilder.append(",\n\"" + node.children().get(0).getClass().getSimpleName().toLowerCase() + "s\": [\n");
 			convertAllChildrenToJson(stringBuilder, node);
 			stringBuilder.append("]\n");
 		}

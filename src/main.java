@@ -140,14 +140,4 @@ class Trans_and_Sat {
 }
 
 
-// nicht verwendet
-class jsonHirarchieTop{
-    private Satellite sat;
-    private ArrayList<jsonHirarchieBottom> TransponderList;
-}
 
-// nicht verwendet
-class jsonHirarchieBottom{
-    private Transponder trans;
-    private ArrayList<Channel> ChannelList;
-}

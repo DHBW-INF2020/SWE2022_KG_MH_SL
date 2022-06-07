@@ -17,6 +17,11 @@ public class Channel extends Node{
 	public String getName() {return name;}
 
 	@Override
+	public String toJson() {
+		return String.format("\"name\": \"%s\"", name);
+	}
+	
+	@Override
 	public <T> T accept(Visitor<T> v) {
 		return v.visitChannel(this);
 	}

@@ -19,6 +19,11 @@ public class Transponder extends Node {
     	this.freq = t.freq;
     	this.sym = t.sym;
     }
+
+	@Override
+	public String toJson() {
+		return String.format("\"pol\": \"%s\",\n\"freq\": \"%s\",\n\"sym\": \"%s\"", pol, freq, sym);
+	}
     
 	@Override
 	public <T> T accept(Visitor<T> v) {

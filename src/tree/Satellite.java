@@ -16,6 +16,11 @@ public class Satellite extends Node{
     	this.sat = s.sat;
     	this.orbital = s.orbital;
     }
+
+	@Override
+	public String toJson() {
+		return String.format("\"sat\": \"%s\",\n\"orbital\": \"%s\"", sat, orbital);
+	}
     
 	@Override
 	public <T> T accept(Visitor<T> v) {

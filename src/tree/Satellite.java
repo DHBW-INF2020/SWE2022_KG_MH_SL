@@ -3,8 +3,8 @@ package tree;
 import visitors.Visitor;
 
 public class Satellite extends Node{
-    
-    private String sat;
+
+	private String sat;
     private String orbital;
     
     public Satellite(String sat, String orbital) {
@@ -16,6 +16,11 @@ public class Satellite extends Node{
     	this.sat = s.sat;
     	this.orbital = s.orbital;
     }
+
+	// Getter SatName
+	public String getSat() {
+		return sat;
+	}
     
 	@Override
 	public <T> T accept(Visitor<T> v) {

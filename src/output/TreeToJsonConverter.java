@@ -19,7 +19,7 @@ public class TreeToJsonConverter extends BaseVisitor<StringBuilder> {
 	 * Converts a whole node to JSON by using a StringBuilder
 	 * 
 	 * @param Node to convert
-	 * @return StringBuilder object with the convertet JSON String
+	 * @return StringBuilder object with the converted JSON String
 	 */
 	private StringBuilder convertNodeToJson(Node node) {
 		StringBuilder stringBuilder = new StringBuilder(node.toJson());

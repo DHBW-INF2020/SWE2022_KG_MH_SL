@@ -3,7 +3,9 @@ package output;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.json.JSONObject;  
-import org.json.XML;  
+import org.json.XML;
+
+import java.io.BufferedWriter;
 import java.io.FileWriter; 
 import java.io.IOException;
 import org.json.JSONException;  
@@ -11,14 +13,25 @@ import tree.Root;
 
 public class Export {
 
-    public static void as_JSON(Root formated_tree){
+	private static String subsituteSpecialCharacters(String jsonString) {
+		return jsonString
+				.replace("\t", "\\t")
+				.replace("\b", "\\b")
+				.replace("\r", "\\r")
+				.replace("\f", "\\f");
+	}
+	
+    public static void as_JSON(StringBuilder jsonTree){
         try {
-
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            //Gson gson = new GsonBuilder().setPrettyPrinting().create();
             FileWriter fileWriter = new FileWriter("./output/output.json");
-            gson.toJson(formated_tree, fileWriter);
+            //gson.toJson(formated_tree, fileWriter);
             //If anything left in buffer, write the rest to the file
-            fileWriter.flush();
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            String printString = jsonTree.toString();
+            printString = Export.subsituteSpecialCharacters(printString);
+            bufferedWriter.append(printString);
+            bufferedWriter.flush();
         } 
         catch (IOException e) {
             System.out.println("An error occurred.");

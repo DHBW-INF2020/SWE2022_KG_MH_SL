@@ -6,7 +6,7 @@ import tree.Root;
 import tree.Satellite;
 import tree.Transponder;
 
-public class BaseVisitor<T> implements Visitor{
+public class BaseVisitor<T> implements IVisitor{
 
 	@Override
 	public T visitRoot(Root r) {

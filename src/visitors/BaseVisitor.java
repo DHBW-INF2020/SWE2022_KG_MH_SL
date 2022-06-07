@@ -7,6 +7,11 @@ import tree.Satellite;
 import tree.Transponder;
 
 /**
+ * This class implements standard behavior for
+ * a visitor. If one of these methods is not
+ * overwritten (used) by the child class the
+ * BaseVisitor will automatically continue
+ * traversing to the next element in the tree.
  *
  * @param <T>
  */

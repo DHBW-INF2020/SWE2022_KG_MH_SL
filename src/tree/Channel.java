@@ -30,6 +30,10 @@ public class Channel extends Node{
 		return name;
 	}
 	
+	public boolean isEqual(Channel c) {
+		return this.name.equals(c.name);
+	}
+	
 	@Override
 	public String toJson() {
 		return String.format("\"name\": \"%s\"", name);

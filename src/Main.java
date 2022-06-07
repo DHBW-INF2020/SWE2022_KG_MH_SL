@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
+import aggregates.ChannelSatellitesAggregate;
 import aggregates.SatelliteTranspondersAggregate;
 import tree.*;
 import output.JSONExport;
@@ -86,11 +87,15 @@ public class Main {
                 root.addNode(satellite);
             }
 
-            SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
-            Root returnTree = (Root) root.accept(sta);
+//            SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
+//            Root returnTree = (Root) root.accept(sta);
+            
+            ChannelSatellitesAggregate csa = new ChannelSatellitesAggregate();
+            Root returnTree = (Root) root.accept(csa);
             
             TreeToJsonConverter converter = new TreeToJsonConverter();
             StringBuilder jsonStringBuilder = (StringBuilder) returnTree.accept(converter);
+//            StringBuilder jsonStringBuilder = (StringBuilder) root.accept(converter);
             
             JSONExport export_json = new JSONExport();
             export_json.export(jsonStringBuilder);

@@ -21,6 +21,10 @@ public class Satellite extends Node{
 		return sat;
 	}
 
+	public String getOrbital() {
+		return orbital;
+	}
+
 	@Override
 	public String toJson() {
 		return String.format("\"sat\": \"%s\",\n\"orbital\": \"%s\"", sat, orbital);

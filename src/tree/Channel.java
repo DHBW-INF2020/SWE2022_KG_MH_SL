@@ -17,7 +17,7 @@ public class Channel extends Node{
 	public String getName() {
 		return name;
 	}
-
+	
 	@Override
 	public String toJson() {
 		return String.format("\"name\": \"%s\"", name);

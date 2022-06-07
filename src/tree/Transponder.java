@@ -20,6 +20,18 @@ public class Transponder extends Node {
     	this.sym = t.sym;
     }
 
+	public String getPol() {
+		return pol;
+	}
+
+	public String getFreq() {
+		return freq;
+	}
+
+	public String getSym() {
+		return sym;
+	}
+
 	@Override
 	public String toJson() {
 		return String.format("\"pol\": \"%s\",\n\"freq\": \"%s\",\n\"sym\": \"%s\"", pol, freq, sym);

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import aggregates.SatelliteTranspondersAggregate;
 import tree.*;
 import output.Export;
+import output.TreeToJsonConverter;
 
 //----------- IO Import ----------
 import java.io.Reader;
@@ -13,7 +14,9 @@ import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class main {
+import javax.swing.event.TreeExpansionEvent;
+
+public class Main {
 
     //--------------------------- buildExampleTree() -----------------------
 
@@ -40,37 +43,36 @@ public class main {
 
 	public static void testAggregate() {
     	SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
-    	Root root = main.buildExampleTree();
+    	Root root = Main.buildExampleTree();
     	Root returnTree = (Root) root.accept(sta);
 	}
 
     //--------------------------- readInputJson() -----------------------
 
     public static void readInputJson(){
-        // Dummie Class "Trans_and_Sat" is needed for Gson to parse the json to the right structure
+        // Dummie Class "transportAndSatellite" is needed for Gson to parse the json to the right structure
         Gson gson = new Gson();
 
-        try(Reader reader = new FileReader("./res/Aufgabe_3_satellites.json")){
+        try {
+        	Reader reader = new FileReader("./res/Aufgabe_3_satellites.json");
             // Parse the JSON
-            Trans_and_Sat[] sat = gson.fromJson(reader, Trans_and_Sat[].class);
+            TransponderAndSatellite[] sat = gson.fromJson(reader, TransponderAndSatellite[].class);
 
             // Create a List for all the previously created Satellites
             ArrayList<Satellite> existingSatList= new ArrayList<Satellite>();
 
             // create helpers
-            String current_sat = sat[0].getSat_name();
-            String previous_sat = sat[0].getSat_name();
             int positionOfCurrentSat = -1;
 
             // loop over all Transponder-Satellite-Combinations in the Input
-            for (Trans_and_Sat trans_and_sat : sat) {
+            for (TransponderAndSatellite transportAndSatellite : sat) {
                 // loop over the already created Satellite Nodes -> existingSatList
-                for (int j = 0; j < existingSatList.size(); j++) {
+                for (int i = 0; i < existingSatList.size(); i++) {
                     // if the Sat is already created set "positionOfCurrentSat" to the Position in "existingSatList"
-                    if (Objects.equals(trans_and_sat.getSat_name(), existingSatList.get(j).getSat())) {
-                        positionOfCurrentSat = j;
+                    if (Objects.equals(transportAndSatellite.getSat_name(), existingSatList.get(i).getSat())) {
+                        positionOfCurrentSat = i;
                         // Terminate the loop over Sat List
-                        j = existingSatList.size();
+                        i = existingSatList.size();
                     }
 
                     else {
@@ -80,14 +82,14 @@ public class main {
 
                 // if sat doesnt exist create and append new sat to "existingSatList"
                 if (positionOfCurrentSat == -1) {
-                    existingSatList.add(new Satellite(trans_and_sat.getSat_name(), trans_and_sat.getOrbital()));
+                    existingSatList.add(new Satellite(transportAndSatellite.getSat_name(), transportAndSatellite.getOrbital()));
                     positionOfCurrentSat = existingSatList.size() - 1;
                 }
 
                 // create the Transponder at current Transponder-Satellite-Combinations
-                Transponder new_transponder = new Transponder(trans_and_sat.getPol(), trans_and_sat.getFreq(), trans_and_sat.getSym());
+                Transponder new_transponder = new Transponder(transportAndSatellite.getPol(), transportAndSatellite.getFreq(), transportAndSatellite.getSym());
                 // create Channellist to iterate over it
-                ArrayList<Channel> channel_list = trans_and_sat.getChannels();
+                ArrayList<Channel> channel_list = transportAndSatellite.getChannels();
 
                 // add channels to new_transponder
                 for (Channel channel : channel_list) {
@@ -109,10 +111,13 @@ public class main {
             }
 
             Root returnTree = (Root) root.accept(sta);
+            
+            TreeToJsonConverter converter = new TreeToJsonConverter();
+            StringBuilder jsonStringBuilder = (StringBuilder) returnTree.accept(converter);
+            
+            Export.as_JSON(jsonStringBuilder);
 
-            Export.as_JSON(root);
-
-            Export.as_XML(returnTree);
+            //Export.as_XML(returnTree);
 
 
         }catch (IOException exception){
@@ -126,24 +131,8 @@ public class main {
     	//main.testAggregate();
         // es sind 3031 Transpoder - SatKombinationen
         // 136 Satelliten
-        main.readInputJson();
+        Main.readInputJson();
     }
-}
-
-class Trans_and_Sat {
-    private String sat;
-    private String orbital;
-    private String pol;
-    private String freq;
-    private String sym;
-    private ArrayList<tree.Channel> channels;
-
-    public String getSat_name() {return sat;}
-    public String getOrbital() {return orbital;}
-    public String getPol() {return pol;}
-    public String getFreq() {return freq;}
-    public String getSym() {return sym;}
-    public ArrayList<Channel> getChannels() {return channels;}
 }
 
 

@@ -4,10 +4,12 @@ import com.google.gson.Gson;
 
 import aggregates.SatelliteTranspondersAggregate;
 import tree.*;
-import output.Export;
+import output.JSONExport;
+import output.XMLExport;
 import output.TreeToJsonConverter;
 
 import java.io.Reader;
+import org.json.JSONException;
 import java.io.IOException;
 import java.io.FileReader;
 import java.util.Arrays;
@@ -90,16 +92,20 @@ public class Main {
             TreeToJsonConverter converter = new TreeToJsonConverter();
             StringBuilder jsonStringBuilder = (StringBuilder) returnTree.accept(converter);
             
-            Export.as_JSON(jsonStringBuilder);
+            JSONExport export_json = new JSONExport();
+            export_json.export(jsonStringBuilder);
+            XMLExport export_xml = new XMLExport();
+            export_xml.export(jsonStringBuilder);
 
-            //Export.as_XML(returnTree);
-            //IExport xmlExport =new XmlExport();
-            //xmlExport.export();
 
-        }catch (IOException exception){
+        }catch (JSONException exception){
+            exception.printStackTrace();
+        }
+        catch (IOException exception){
             exception.printStackTrace();
         }
     }
+        
 
     //--------------------------- main(Sting[]Args) -----------------------
 

@@ -7,7 +7,6 @@ import tree.*;
 import output.Export;
 import output.TreeToJsonConverter;
 
-//----------- IO Import ----------
 import java.io.Reader;
 import java.io.IOException;
 import java.io.FileReader;
@@ -17,7 +16,9 @@ import java.util.Objects;
 import javax.swing.event.TreeExpansionEvent;
 
 public class Main {
-
+	
+	//public static Root createTree() {};
+	
     public static void readInputJson(){
         // Dummie Class "transportAndSatellite" is needed for Gson to parse the json to the right structure
         Gson gson = new Gson();
@@ -69,8 +70,6 @@ public class Main {
                 existingSatList.get(positionOfCurrentSat).addNode(new_transponder);
             }
 
-            SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
-
             // create Tree Root
             Root root = new Root();
 
@@ -79,6 +78,7 @@ public class Main {
                 root.addNode(satellite);
             }
 
+            SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
             Root returnTree = (Root) root.accept(sta);
             
             TreeToJsonConverter converter = new TreeToJsonConverter();
@@ -87,7 +87,8 @@ public class Main {
             Export.as_JSON(jsonStringBuilder);
 
             //Export.as_XML(returnTree);
-
+            //IExport xmlExport =new XmlExport();
+            //xmlExport.export();
 
         }catch (IOException exception){
             exception.printStackTrace();

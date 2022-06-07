@@ -2,6 +2,9 @@ package tree;
 
 import visitors.IVisitor;
 
+/**
+ *
+ */
 public class Root extends Node{
 
 	@Override

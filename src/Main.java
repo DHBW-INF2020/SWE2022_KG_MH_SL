@@ -15,10 +15,16 @@ import java.util.Objects;
 
 import javax.swing.event.TreeExpansionEvent;
 
+/**
+ *
+ */
 public class Main {
 	
 	//public static Root createTree() {};
 	
+    /**
+     * 
+     */
     public static void readInputJson(){
         // Dummie Class "transportAndSatellite" is needed for Gson to parse the json to the right structure
         Gson gson = new Gson();
@@ -97,6 +103,9 @@ public class Main {
 
     //--------------------------- main(Sting[]Args) -----------------------
 
+    /**
+     * @param Args
+     */
     public static void main(String[]Args){
     	//main.testAggregate();
         // es sind 3031 Transpoder - SatKombinationen

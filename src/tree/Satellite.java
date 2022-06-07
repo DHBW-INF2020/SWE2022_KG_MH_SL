@@ -2,25 +2,41 @@ package tree;
 
 import visitors.IVisitor;
 
+/**
+ *
+ */
 public class Satellite extends Node{
 
 	private String sat;
     private String orbital;
     
+    /**
+     * @param sat
+     * @param orbital
+     */
     public Satellite(String sat, String orbital) {
     	this.sat = replaceQutationMark(sat);
     	this.orbital = replaceQutationMark(orbital);
     }
     
+    /**
+     * @param s
+     */
     public Satellite(Satellite s) {
     	this.sat = s.sat;
     	this.orbital = s.orbital;
     }
 
+	/**
+	 * @return
+	 */
 	public String getSat() {
 		return sat;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getOrbital() {
 		return orbital;
 	}

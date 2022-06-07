@@ -11,8 +11,15 @@ import java.io.IOException;
 import org.json.JSONException;  
 import tree.Root;
 
+/**
+ *
+ */
 public class Export {
 
+	/**
+	 * @param jsonString
+	 * @return
+	 */
 	private static String subsituteSpecialCharacters(String jsonString) {
 		return jsonString
 				.replace("\t", "\\t")
@@ -21,6 +28,9 @@ public class Export {
 				.replace("\f", "\\f");
 	}
 	
+    /**
+     * @param jsonTree
+     */
     public static void as_JSON(StringBuilder jsonTree){
         try {
             //Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -39,6 +49,9 @@ public class Export {
         }
     }
 
+    /**
+     * @param formated_tree
+     */
     public static void as_XML(Root formated_tree){
         try {
             Gson gson = new GsonBuilder().create();

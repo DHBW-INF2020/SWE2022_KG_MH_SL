@@ -10,8 +10,15 @@ import tree.Satellite;
 import tree.Transponder;
 import visitors.BaseVisitor;
 
+/**
+ *
+ */
 public class TreeToJsonConverter extends BaseVisitor<StringBuilder> {
 	
+	/**
+	 * @param node
+	 * @return
+	 */
 	public StringBuilder functionName(Node node) {
 		StringBuilder stringBuilder = new StringBuilder(node.toJson());
 		

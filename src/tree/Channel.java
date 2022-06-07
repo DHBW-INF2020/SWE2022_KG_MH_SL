@@ -2,18 +2,30 @@ package tree;
 
 import visitors.IVisitor;
 
+/**
+ *
+ */
 public class Channel extends Node{
 
 	private String name;
     
+    /**
+     * @param name
+     */
     public Channel(String name) {
     	this.name = replaceQutationMark(name);
     }
     
+    /**
+     * @param c
+     */
     public Channel(Channel c) {
     	this.name = c.name;
     }
 
+	/**
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}

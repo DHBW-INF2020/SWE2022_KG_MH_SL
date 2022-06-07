@@ -35,4 +35,8 @@ public abstract class Node {
 		}
 		return Collections.emptyList();
 	}
+	
+	protected String replaceQutationMark(String text) {
+		return text.replace("\"", "\\\"");
+	}
 }

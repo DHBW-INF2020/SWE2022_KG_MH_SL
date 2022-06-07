@@ -7,14 +7,16 @@ public class Channel extends Node{
 	private String name;
     
     public Channel(String name) {
-    	this.name = name;
+    	this.name = replaceQutationMark(name);
     }
     
     public Channel(Channel c) {
     	this.name = c.name;
     }
 
-	public String getName() {return name;}
+	public String getName() {
+		return name;
+	}
 
 	@Override
 	public String toJson() {

@@ -9,9 +9,9 @@ public class Transponder extends Node {
     private String sym;
     
     public Transponder(String pol, String freq, String sym) {
-    	this.pol = pol;
-    	this.freq = freq;
-    	this.sym = sym;
+    	this.pol = replaceQutationMark(pol);
+    	this.freq = replaceQutationMark(freq);
+    	this.sym = replaceQutationMark(sym);
     }
     
     public Transponder(Transponder t) {

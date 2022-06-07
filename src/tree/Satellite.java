@@ -8,8 +8,8 @@ public class Satellite extends Node{
     private String orbital;
     
     public Satellite(String sat, String orbital) {
-    	this.sat = sat;
-    	this.orbital = orbital;
+    	this.sat = replaceQutationMark(sat);
+    	this.orbital = replaceQutationMark(orbital);
     }
     
     public Satellite(Satellite s) {

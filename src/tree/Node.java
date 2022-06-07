@@ -10,7 +10,7 @@ public abstract class Node {
     protected List<Node> children;
 	
 	public abstract String toJson();
-	public abstract <T> T accept(Visitor<T> v);
+	public abstract <T> T accept(IVisitor<T> v);
 	
 	public Node() {
 		children = new ArrayList<>();

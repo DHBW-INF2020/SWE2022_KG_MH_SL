@@ -1,6 +1,6 @@
 package tree;
 
-import visitors.Visitor;
+import visitors.IVisitor;
 
 public class Transponder extends Node {
     
@@ -26,7 +26,7 @@ public class Transponder extends Node {
 	}
     
 	@Override
-	public <T> T accept(Visitor<T> v) {
+	public <T> T accept(IVisitor<T> v) {
 		return v.visitTransponder(this);
 	}
 }

@@ -1,6 +1,6 @@
 package tree;
 
-import visitors.Visitor;
+import visitors.IVisitor;
 
 public class Satellite extends Node{
 
@@ -27,7 +27,7 @@ public class Satellite extends Node{
 	}
     
 	@Override
-	public <T> T accept(Visitor<T> v) {
+	public <T> T accept(IVisitor<T> v) {
 		return v.visitSatellite(this);
 	}
 

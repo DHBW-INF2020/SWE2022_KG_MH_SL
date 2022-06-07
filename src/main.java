@@ -18,37 +18,6 @@ import javax.swing.event.TreeExpansionEvent;
 
 public class Main {
 
-    //--------------------------- buildExampleTree() -----------------------
-
-	public static Root buildExampleTree() {
-		Root root = new Root();
-		Satellite sat = new Satellite("sat1", "orb1");
-		Transponder tr1 = new Transponder("pol1", "freq1", "sym1");
-		Transponder tr2 = new Transponder("pol2", "freq2", "sym2");
-		Channel ch1 = new Channel("ch1");
-		Channel ch2 = new Channel("ch2");
-		Channel ch3 = new Channel("ch3");
-		Channel ch4 = new Channel("ch4");
-		tr1.addNode(ch1);
-		tr1.addNode(ch2);
-		tr2.addNode(ch3);
-		tr2.addNode(ch4);
-		sat.addNode(tr1);
-		sat.addNode(tr2);
-		root.addNode(sat);
-		return root;
-	}
-
-    //--------------------------- testAggregate() -----------------------
-
-	public static void testAggregate() {
-    	SatelliteTranspondersAggregate sta = new SatelliteTranspondersAggregate();
-    	Root root = Main.buildExampleTree();
-    	Root returnTree = (Root) root.accept(sta);
-	}
-
-    //--------------------------- readInputJson() -----------------------
-
     public static void readInputJson(){
         // Dummie Class "transportAndSatellite" is needed for Gson to parse the json to the right structure
         Gson gson = new Gson();

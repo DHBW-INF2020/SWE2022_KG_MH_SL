@@ -37,10 +37,6 @@ public class BaseVisitor<T> implements IVisitor{
 		return visitChildren(c);
 	}
 	
-	/**
-	 * @param n
-	 * @return
-	 */
 	private T visitChildren(Node n) {
 	    T r = null;
 	    for (Node c : n.children()) {

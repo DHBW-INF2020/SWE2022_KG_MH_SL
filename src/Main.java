@@ -29,21 +29,15 @@ public class Main {
     /**
      * @param Args
      */
-    public static void main(String[]Args) throws JSONException {
-    	//main.testAggregate();
-        // es sind 3031 Transpoder - SatKombinationen
-        // 136 Satelliten
-        JsonToTreeConverter converter = new JsonToTreeConverter();
-        converter.readInputJson("./res/Aufgabe_3_satellites.json");
+    public static void main(String[] Args) throws JSONException {
 
-        //Main.readInputJson();
-
+        JsonToTreeConverter inputConverter = new JsonToTreeConverter();
         ChannelSatellitesAggregate csa = new ChannelSatellitesAggregate();
-        Root returnTree = (Root) converter.readInputJson("./res/Aufgabe_3_satellites.json").accept(csa);
+        Root returnTree = (Root) inputConverter.readInputJson("./res/Aufgabe_3_satellites.json").accept(csa);
 
-        TreeToJsonConverter converter_2 = new TreeToJsonConverter();
-        StringBuilder jsonStringBuilder = (StringBuilder) returnTree.accept(converter_2);
-//            StringBuilder jsonStringBuilder = (StringBuilder) root.accept(converter);
+        TreeToJsonConverter outputConverter = new TreeToJsonConverter();
+        StringBuilder jsonStringBuilder = (StringBuilder) returnTree.accept(outputConverter);
+//            StringBuilder jsonStringBuilder = (StringBuilder) root.accept(outputConverter);
 
         JSONExport export_json = new JSONExport();
         export_json.export(jsonStringBuilder);

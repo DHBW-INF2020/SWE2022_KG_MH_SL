@@ -1,14 +1,31 @@
 package input;
 
+import com.google.gson.Gson;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
+
 public class ProgramConfiguration {
 
     private String[] programFlags;
+    //
     private String inputFilePath;
+
     private String outputFilePath;
+    //
     private String aggregateType;
+    // j = json | x = xml
     private String outputFileType;
 
-    public ProgramConfiguration(){}
+    public ProgramConfiguration(){
+
+    }
+
+    public ProgramConfiguration(String[] PLACEHOLDER)
+    {
+
+    }
 
     // Getter Setter for ProgramFlags[]
 
@@ -16,39 +33,19 @@ public class ProgramConfiguration {
         return programFlags;
     }
 
-    public void setProgramFlags() {
-        this.programFlags = programFlags;
-    }
-
     public String getInputFilePath() {
         return inputFilePath;
-    }
-
-    public void setInputFilePath(String inputFilePath) {
-        this.inputFilePath = inputFilePath;
     }
 
     public String getOutputFilePath() {
         return outputFilePath;
     }
 
-    public void setOutputFilePath(String outputFilePath) {
-        this.outputFilePath = outputFilePath;
-    }
-
     public String getAggregateType() {
         return aggregateType;
     }
 
-    public void setAggregateType(String aggregateType) {
-        this.aggregateType = aggregateType;
-    }
-
     public String getOutputFileType() {
         return outputFileType;
-    }
-
-    public void setOutputFileType(String outputFileType) {
-        this.outputFileType = outputFileType;
     }
 }

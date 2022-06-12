@@ -1,0 +1,6 @@
+{
+    "inputFilePath": "./res/Aufgabe_3_satellites.json",
+    "outputFilePath": "./output/output.json",
+    "outputFileType": "x",
+    "aggregateType": "1"
+}

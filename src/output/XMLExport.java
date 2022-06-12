@@ -45,11 +45,20 @@ public class XMLExport implements IExport{
             JSONArray json = new JSONArray(gson.toJson(jsonParser.parse(jsonTree.toString())));
 
             // Create XML-String from JSONArray
+            String rootname;
+            String aggregatname;
+            switch (aggregat){
+                case "csa":
+                    rootname = "";
+                    aggregatname = "";
+                break;
+            }
+
             String xml = XML.toString(json, "root");
             xml = "<Root>" + xml + "</Root>";
             Document xmlDoc = toXmlDocument(xml);
             String formattedXML = prettyPrint(xmlDoc);
-             
+            
             // Write formated XML-String to file
             bufferedWriter.write(formattedXML);
             bufferedWriter.flush();

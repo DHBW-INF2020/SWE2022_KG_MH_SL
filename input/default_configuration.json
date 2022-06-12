@@ -1,6 +1,6 @@
 {
     "inputFilePath": "./res/Aufgabe_3_satellites.json",
-    "outputFilePath": "./output/output.json",
-    "outputFileType": "json",
+    "outputFilePath": "./output/output.xml",
+    "outputFileType": "xml",
     "aggregateType": "csa"
 }

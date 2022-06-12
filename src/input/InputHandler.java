@@ -6,9 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;
 
+/**
+ *
+ */
 public class InputHandler {
-    public InputHandler(){};
-
     public ProgramConfiguration readInput(String[] Args) throws Exception {
         ProgramConfiguration currentConfiguration = null;
 
@@ -21,15 +22,12 @@ public class InputHandler {
 
         // config file
         else if (Args.length == 1) {
-            System.out.println("debug - else if readInput");
-
             currentConfiguration = createProgramConfiguration(Args[0]);
         }
 
         // config with flags
         else
         {
-            System.out.println("debug - else read input");
             currentConfiguration = new ProgramConfiguration(Args);
         }
         return currentConfiguration;

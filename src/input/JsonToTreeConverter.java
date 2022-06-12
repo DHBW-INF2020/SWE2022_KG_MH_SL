@@ -9,8 +9,14 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ *
+ */
 public class JsonToTreeConverter {
 
+    /**
+     *
+     */
     public Root readInputJson(String filename)
     {
         // Dummie Class "transportAndSatellite" is needed for Gson to parse the json to the right structure

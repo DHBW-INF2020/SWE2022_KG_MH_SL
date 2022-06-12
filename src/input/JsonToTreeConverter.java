@@ -1,6 +1,5 @@
 package input;
 
-
 import com.google.gson.Gson;
 import tree.*;
 import java.io.FileNotFoundException;

@@ -24,7 +24,7 @@ public class Main {
         InputHandler inputHandler = new InputHandler();
 
         // create new Configuration for Program
-        ProgramConfiguration currentConfiguration = inputHandler.readInput(Args);;
+        ProgramConfiguration currentConfiguration = inputHandler.readInput(Args);
         // run Program
         currentConfiguration.runProgramWithConfig();
     }

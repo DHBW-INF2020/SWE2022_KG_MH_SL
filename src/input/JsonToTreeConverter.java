@@ -1,22 +1,15 @@
 package input;
 
-import aggregates.ChannelSatellitesAggregate;
-import com.google.gson.Gson;
-import org.json.JSONException;
-import output.JSONExport;
-import output.TreeToJsonConverter;
-import output.XMLExport;
-import tree.*;
 
+import com.google.gson.Gson;
+import tree.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class JsonToTreeConverter {
-    public JsonToTreeConverter(){}
 
     public Root readInputJson(String filename)
     {

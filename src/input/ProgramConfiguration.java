@@ -2,7 +2,6 @@ package input;
 
 import aggregates.ChannelSatellitesAggregate;
 import aggregates.SatelliteTranspondersAggregate;
-import com.google.gson.Gson;
 import org.json.JSONException;
 import output.JSONExport;
 import output.TreeToJsonConverter;
@@ -11,9 +10,6 @@ import tree.Root;
 import visitors.BaseVisitor;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.Reader;
 import java.util.Objects;
 
 /**
@@ -150,19 +146,19 @@ public class ProgramConfiguration {
         {
             // convert JSON String to XML
             XMLExport export_xml = new XMLExport();
-            export_xml.export(jsonStringBuilder);
+            export_xml.export(jsonStringBuilder, aggregateType);
         }
         else if (Objects.equals(outputFileType, "json"))
         {
             // Print JSON String to JSON File
             JSONExport export_json = new JSONExport();
-            export_json.export(jsonStringBuilder);
+            export_json.export(jsonStringBuilder, aggregateType);
         }
         else
         {
             System.out.println("unknown File Type - using json now");
             JSONExport export_json = new JSONExport();
-            export_json.export(jsonStringBuilder);
+            export_json.export(jsonStringBuilder, aggregateType);
         }
     }
 

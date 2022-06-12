@@ -32,7 +32,7 @@ import javax.xml.transform.TransformerException;
 
 public class XMLExport implements IExport{
 
-    public void export(StringBuilder jsonTree) throws JSONException{
+    public void export(StringBuilder jsonTree, String aggregat) throws JSONException{
         try {
             
             // Create Writer

@@ -19,7 +19,7 @@ public class JSONExport implements IExport{
                 .replace("\f", "\\f");
     }
 
-    public void export(StringBuilder jsonTree) {
+    public void export(StringBuilder jsonTree, String aggregat) {
         
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

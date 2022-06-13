@@ -14,7 +14,12 @@ import java.util.Objects;
 public class JsonToTreeConverter {
 
     /**
+     * This Method use GSON to parse the JSON behind "filename" and create the according Tree Structure
      *
+     * The mixed up structure (Satellites and Transponders combined in an Object) will be corrected in this Method
+     *
+     * @param filename the Path to the JSON containing the Satellites, Transponders and Channels
+     * @return Root the Root of the created Tree
      */
     public Root readInputJson(String filename)
     {

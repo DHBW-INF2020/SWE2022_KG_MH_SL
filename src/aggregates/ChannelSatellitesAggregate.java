@@ -52,7 +52,7 @@ public class ChannelSatellitesAggregate extends BaseVisitor<Node>{
 	 * Checks to see if channel already exists in the
 	 * global list.
 	 * 
-	 * @param Channel to search for
+	 * @param c to search for
 	 * @return Returns a channel if one has been found
 	 */
 	private Channel doesChannelExist(Channel c) {

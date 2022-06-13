@@ -13,15 +13,13 @@ import java.io.File;
 import java.util.Objects;
 
 /**
- *
+ * Creates the Config and runs the Program according to this config
  */
 public class ProgramConfiguration {
 
     private String[] programFlags;
     //
     private String inputFilePath;
-
-    private String outputFilePath;
     //
     private String aggregateType;
     // j = json | x = xml
@@ -29,12 +27,18 @@ public class ProgramConfiguration {
 
 
     /**
+     * Constructor:
+     * Creates a Programm Configuration according to a given number of Input Parameters from the Program Call
      *
+     * The Program Configuration controls the "flow" of the program
+     *
+     * @param Args a String Array that contains the Parameters from Program startup
      */
     public ProgramConfiguration(String[] Args) throws Exception {
         programFlags = Args;
 
-        if(Args.length == 0|| Args.length == 1 ||Args.length == 4)
+        // if number of args is correct, try to use them for Program
+        if(Args.length == 3)
         {
             // Set aggregateType
             if(Objects.equals(Args[0], "csa")||Objects.equals(Args[0],"sta"))
@@ -70,38 +74,40 @@ public class ProgramConfiguration {
                 System.out.println("Set to default => ./res/Aufgabe_3_satellites.json");
                 inputFilePath = "./res/Aufgabe_3_satellites.json";
             }
-
-            // Set outputFilePath
-            outputFilePath = Args[3];
         }
+
+        // False input -> use default instead
         else{
             System.out.println("Number of Flags not Valid");
             System.out.println("Set to default => default config");
             aggregateType = "csa";
             outputFileType = "json";
             inputFilePath = "./res/Aufgabe_3_satellites.json";
-            outputFilePath = "./output/output.json";
         }
     }
 
     // Getter for ProgramFlags[]
-
+    /**
+     * @return String[] returns all Program Flags from the Program Call
+     */
     public String[] getProgramFlags() {
         return programFlags;
     }
-
+    /**
+     * @return String returns the File Path of the Input File
+     */
     public String getInputFilePath() {
         return inputFilePath;
     }
-
-    public String getOutputFilePath() {
-        return outputFilePath;
-    }
-
+    /**
+     * @return String returns the whished Aggregate type -> eg: sta, csa
+     */
     public String getAggregateType() {
         return aggregateType;
     }
-
+    /**
+     * @return String returns the output file type -> eg: json, xml
+     */
     public String getOutputFileType() {
         return outputFileType;
     }
@@ -109,9 +115,10 @@ public class ProgramConfiguration {
     // ------------- run Program Config -----------------
 
     /**
+     * The Programm is run according to the previously created Program Configuration
      *
+     * This Method will create a output at ./output/output.[insert Filetype here]
      */
-
     public void runProgramWithConfig() throws JSONException {
         JsonToTreeConverter inputConverter = new JsonToTreeConverter();
 

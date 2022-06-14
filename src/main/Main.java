@@ -1,5 +1,6 @@
-import input.InputHandler;
-import input.ProgramConfiguration;
+package main;
+import main.input.InputHandler;
+import main.input.ProgramConfiguration;
 
 
 /**

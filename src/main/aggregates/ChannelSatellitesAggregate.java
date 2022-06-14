@@ -1,13 +1,13 @@
-package aggregates;
+package main.aggregates;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import tree.Channel;
-import tree.Node;
-import tree.Root;
-import tree.Satellite;
-import visitors.BaseVisitor;
+import main.tree.Channel;
+import main.tree.Node;
+import main.tree.Root;
+import main.tree.Satellite;
+import main.visitors.BaseVisitor;
 
 /**
  *	Aggregates Sattelites under the individual Channels by

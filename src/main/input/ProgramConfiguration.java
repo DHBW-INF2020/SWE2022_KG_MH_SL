@@ -1,16 +1,18 @@
-package input;
+package main.input;
 
-import aggregates.ChannelSatellitesAggregate;
-import aggregates.SatelliteTranspondersAggregate;
 import org.json.JSONException;
-import output.JSONExport;
-import output.TreeToJsonConverter;
-import output.XMLExport;
-import tree.Root;
-import visitors.BaseVisitor;
+
+import main.aggregates.ChannelSatellitesAggregate;
+import main.aggregates.SatelliteTranspondersAggregate;
+import main.output.JSONExport;
+import main.output.TreeToJsonConverter;
+import main.output.XMLExport;
+import main.tree.Root;
+import main.visitors.BaseVisitor;
 
 import java.io.File;
 import java.util.Objects;
+
 
 /**
  * Creates the Config and runs the Program according to this config

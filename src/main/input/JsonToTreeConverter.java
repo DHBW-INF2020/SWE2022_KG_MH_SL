@@ -1,7 +1,9 @@
-package input;
+package main.input;
 
 import com.google.gson.Gson;
-import tree.*;
+
+import main.tree.*;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Reader;

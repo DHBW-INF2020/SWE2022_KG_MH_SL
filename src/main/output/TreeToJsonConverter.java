@@ -1,13 +1,13 @@
-package output;
+package main.output;
 
 import java.util.Iterator;
 
-import tree.Channel;
-import tree.Node;
-import tree.Root;
-import tree.Satellite;
-import tree.Transponder;
-import visitors.BaseVisitor;
+import main.tree.Channel;
+import main.tree.Node;
+import main.tree.Root;
+import main.tree.Satellite;
+import main.tree.Transponder;
+import main.visitors.BaseVisitor;
 
 /**
  *	Converts a tree to a JSON String equivalent

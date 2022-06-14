@@ -1,0 +1,281 @@
+[
+  {
+    "name": "Fuel TV HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Discovery Science HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Gametoon HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Fast \u0026 FunBOX HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "B1B Action HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "7/8 TV HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Fox Bulgaria HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Fox Life Bulgaria HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Fox Crime Bulgaria HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "BNT 2 HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "BNT 4 HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Nat Geo Wild Bulgaria HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "TV1 HD Bulgaria",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "bTV Cinema",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Test HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Auto Motor und Sport HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Chasse \u0026 Peche HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Wness TV HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Love Nature HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Viasat History HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Viasat Nature HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Viasat Explore HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "NASA HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Epic Drama HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Eurochannel HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Deluxe Music HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "MTV Live HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Luxe TV HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Mezzo Live HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "Stingray iConcerts HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  },
+  {
+    "name": "KiKa HD",
+    "satellites": [
+      {
+        "sat": "BulgariaSat-1",
+        "orbital": "1.9° E"
+      }
+    ]
+  }
+]

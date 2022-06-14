@@ -1,9 +1,10 @@
-package tree;
+package main.tree;
 
-import visitors.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import main.visitors.*;
 
 /**
  *

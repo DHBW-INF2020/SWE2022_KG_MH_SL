@@ -1,4 +1,4 @@
-package output;
+package main.output;
 
 import java.io.FileWriter; 
 import java.io.IOException;
@@ -22,9 +22,11 @@ public class JSONExport implements IExport{
     public void export(StringBuilder jsonTree, String aggregat) {
         
         try {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            // 
             FileWriter fileWriter = new FileWriter("./output/output.json");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String printString = jsonTree.toString();
             printString = JSONExport.subsituteSpecialCharacters(printString);
             JsonElement jsonObject = JsonParser.parseString(printString);

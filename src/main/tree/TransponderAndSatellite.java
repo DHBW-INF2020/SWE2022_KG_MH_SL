@@ -1,4 +1,4 @@
-package tree;
+package main.tree;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,7 @@ public class TransponderAndSatellite {
     private String pol;
     private String freq;
     private String sym;
-    private ArrayList<tree.Channel> channels;
+    private ArrayList<Channel> channels;
 
     /**
      * @return sat -> returns the name of the Satellite

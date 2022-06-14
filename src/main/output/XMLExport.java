@@ -1,4 +1,4 @@
-package output;
+package main.output;
 
 import java.io.FileWriter; 
 import java.io.IOException;
@@ -45,17 +45,19 @@ public class XMLExport implements IExport{
             JSONArray json = new JSONArray(gson.toJson(jsonParser.parse(jsonTree.toString())));
 
             // Create XML-String from JSONArray
-            String rootname;
-            String aggregatname;
+            String rootname = "";
+            String aggregatname = "";
             switch (aggregat){
                 case "csa":
-                    rootname = "";
-                    aggregatname = "";
+                    rootname = "channels";
+                    aggregatname = "channel";
+                break;
+                case "sta":
+                    rootname = "satellites";
+                    aggregatname = "sat";
                 break;
             }
-
-            String xml = XML.toString(json, "root");
-            xml = "<Root>" + xml + "</Root>";
+            String xml =  "<" + rootname + ">" + XML.toString(json, aggregatname)+ "</" + rootname + ">";
             Document xmlDoc = toXmlDocument(xml);
             String formattedXML = prettyPrint(xmlDoc);
             
@@ -65,6 +67,7 @@ public class XMLExport implements IExport{
             bufferedWriter.close();
 
         } 
+        // Catch Exeptions
         catch (ParserConfigurationException | SAXException | IOException | TransformerException e) {
             e.printStackTrace();
         }
@@ -82,19 +85,18 @@ public class XMLExport implements IExport{
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 
-        
+        // Create source and Result for transformation
         DOMSource source = new DOMSource(document);
         StringWriter strWriter = new StringWriter();
         StreamResult result = new StreamResult(strWriter);
-    
         transformer.transform(source, result);
     
         return strWriter.getBuffer().toString();
-    
     }
     
     private static Document toXmlDocument(String data)throws ParserConfigurationException, SAXException, IOException {
     
+        // Create Document from String
         DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
         Document document = docBuilder.parse(new InputSource(new StringReader(data)));

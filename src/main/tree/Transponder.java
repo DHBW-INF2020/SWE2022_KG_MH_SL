@@ -1,6 +1,6 @@
-package tree;
+package main.tree;
 
-import visitors.IVisitor;
+import main.visitors.IVisitor;
 
 /**
  *

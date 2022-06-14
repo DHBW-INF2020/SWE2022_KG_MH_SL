@@ -1,4 +1,4 @@
-package input;
+package main.input;
 
 import com.google.gson.Gson;
 

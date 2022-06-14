@@ -1,4 +1,4 @@
-package output;
+package main.output;
 
 import org.json.JSONException;
 

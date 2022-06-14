@@ -1,10 +1,10 @@
-package visitors;
+package main.visitors;
 
-import tree.Channel;
-import tree.Node;
-import tree.Root;
-import tree.Satellite;
-import tree.Transponder;
+import main.tree.Channel;
+import main.tree.Node;
+import main.tree.Root;
+import main.tree.Satellite;
+import main.tree.Transponder;
 
 /**
  * This class implements standard behavior for

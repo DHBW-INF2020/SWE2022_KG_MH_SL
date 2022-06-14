@@ -1,0 +1,219 @@
+<channels>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Fuel TV HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Discovery Science HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Gametoon HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Fast &amp; FunBOX HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>B1B Action HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>7/8 TV HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Fox Bulgaria HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Fox Life Bulgaria HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Fox Crime Bulgaria HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>BNT 2 HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>BNT 4 HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Nat Geo Wild Bulgaria HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>TV1 HD Bulgaria</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>bTV Cinema</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Test HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Auto Motor und Sport HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Chasse &amp; Peche HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Wness TV HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Love Nature HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Viasat History HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Viasat Nature HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Viasat Explore HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>NASA HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Epic Drama HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Eurochannel HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Deluxe Music HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>MTV Live HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Luxe TV HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Mezzo Live HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>Stingray iConcerts HD</name>
+  </channel>
+  <channel>
+    <satellites>
+      <sat>BulgariaSat-1</sat>
+      <orbital>1.9° E</orbital>
+    </satellites>
+    <name>KiKa HD</name>
+  </channel>
+</channels>

@@ -1,6 +1,6 @@
-package visitors;
+package main.visitors;
 
-import tree.*;
+import main.tree.*;
 
 /**
  * Interface for the Visitor in order to

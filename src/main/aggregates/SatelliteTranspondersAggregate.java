@@ -1,10 +1,10 @@
-package aggregates;
+package main.aggregates;
 
-import tree.Node;
-import tree.Root;
-import tree.Satellite;
-import tree.Transponder;
-import visitors.BaseVisitor;
+import main.tree.Node;
+import main.tree.Root;
+import main.tree.Satellite;
+import main.tree.Transponder;
+import main.visitors.BaseVisitor;
 
 /**
  *	Aggregates Transponders under the individual Satellites by

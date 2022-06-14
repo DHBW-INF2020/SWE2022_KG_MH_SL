@@ -9,8 +9,16 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+/**
+ * The JSONExport is responsible for exporting a given Stringbuilder as a .json-file
+ */
 public class JSONExport implements IExport{
-
+    /**
+     * This Method will substitute special characters within a given String
+     *
+     * @param jsonString a String containing a JSONArray or JSONObject
+     * @return The jsonstring without special characters
+     */
     private static String subsituteSpecialCharacters(String jsonString) {
         return jsonString
                 .replace("\t", "\\t")
@@ -19,17 +27,26 @@ public class JSONExport implements IExport{
                 .replace("\f", "\\f");
     }
 
+    /**
+     * This Method will write a given Stringbuilder to a .json-file
+     *
+     * @param jsonString a String containing a JSONArray or JSONObject
+     * @param aggregat a String containing information about the used aggregate
+     */
     public void export(StringBuilder jsonTree, String aggregat) {
         
         try {
-            // 
+            // Create Writer
             FileWriter fileWriter = new FileWriter("./output/output.json");
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
+            // Create jsonString with correct formating
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String printString = jsonTree.toString();
-            printString = JSONExport.subsituteSpecialCharacters(printString);
-            JsonElement jsonObject = JsonParser.parseString(printString);
+            String jsonString = jsonTree.toString();
+            jsonString = JSONExport.subsituteSpecialCharacters(jsonString);
+            JsonElement jsonObject = JsonParser.parseString(jsonString);
+
+            // Write jsonString to file
             gson.toJson(jsonObject, bufferedWriter);
             bufferedWriter.flush();
         } 

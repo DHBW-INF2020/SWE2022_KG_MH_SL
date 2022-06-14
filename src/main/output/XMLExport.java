@@ -29,9 +29,17 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.TransformerException;
 
-
+/**
+ * The XMLExport is responsible for exporting a given Stringbuilder as a .xml-file
+ */
 public class XMLExport implements IExport{
 
+     /**
+     * This Method will write a given Stringbuilder to a .xml-file
+     *
+     * @param jsonString a String containing a JSONArray or JSONObject
+     * @param aggregat a String containing information about the used aggregate
+     */
     public void export(StringBuilder jsonTree, String aggregat) throws JSONException{
         try {
             
@@ -58,7 +66,7 @@ public class XMLExport implements IExport{
                 break;
             }
             String xml =  "<" + rootname + ">" + XML.toString(json, aggregatname)+ "</" + rootname + ">";
-            Document xmlDoc = toXmlDocument(xml);
+            Document xmlDoc = xmlToDocument(xml);
             String formattedXML = prettyPrint(xmlDoc);
             
             // Write formated XML-String to file
@@ -73,7 +81,11 @@ public class XMLExport implements IExport{
         }
 
     }
-
+    /**
+     * This Method will prettyprint a given document
+     *
+     * @param document Document containing the xml-String which will be prettyprinted
+     */
     private static String prettyPrint(Document document) throws TransformerException {
 
         // Create Transformer
@@ -93,8 +105,12 @@ public class XMLExport implements IExport{
     
         return strWriter.getBuffer().toString();
     }
-    
-    private static Document toXmlDocument(String data)throws ParserConfigurationException, SAXException, IOException {
+    /**
+     * This Method will convert a xml-String to a Document
+     *
+     * @param data a xml-String
+     */
+    private static Document xmlToDocument(String data)throws ParserConfigurationException, SAXException, IOException {
     
         // Create Document from String
         DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();

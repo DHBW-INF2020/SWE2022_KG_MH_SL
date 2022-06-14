@@ -1,10 +1,16 @@
 package test;
 
 import java.io.IOException;
-
 import org.json.JSONException;
 
+/**
+ * Class to run Unittests
+ */
 public class TestRunner {
+    /**
+     * @param args 
+     *
+     */
     public static void main(String[] args) {
         try {
 

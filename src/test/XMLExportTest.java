@@ -24,6 +24,7 @@ public class XMLExportTest {
     /**
      * This Method will perform the unittests
      *
+     * @author Lang
      * @return True if test passed
      */
     

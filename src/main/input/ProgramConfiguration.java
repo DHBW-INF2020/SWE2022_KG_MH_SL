@@ -34,7 +34,7 @@ public class ProgramConfiguration {
      * Creates a Programm Configuration according to a given number of Input Parameters from the Program Call
      *
      * The Program Configuration controls the "flow" of the program
-     *
+     * @author Hartmann
      * @param Args a String Array that contains the Parameters from Program startup
      */
     public ProgramConfiguration(String[] Args) throws Exception {
@@ -121,6 +121,8 @@ public class ProgramConfiguration {
      * The Programm is run according to the previously created Program Configuration
      *
      * This Method will create a output at ./output/output.[insert Filetype here]
+     *
+     * @author Hartmann
      */
     public void runProgramWithConfig() throws JSONException {
         JsonToTreeConverter inputConverter = new JsonToTreeConverter();

@@ -3,7 +3,10 @@ package main.tree;
 import main.visitors.IVisitor;
 
 /**
+ * A node in the tree representing the Root of the Tree
  *
+ * @author Gavagan
+ * @version 1.0
  */
 public class Root extends Node{
 

@@ -6,6 +6,9 @@ import java.util.ArrayList;
  * THis class represents the Object Structure of Aufgabe_3_satellites
  *
  * This helper-class is needed by gson to correctly parse the Input JSON
+ *
+ * @author Hartmann
+ * @version 1.0
  */
 public class TransponderAndSatellite {
 	private String sat;

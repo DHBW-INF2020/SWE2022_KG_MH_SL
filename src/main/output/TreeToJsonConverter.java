@@ -11,6 +11,9 @@ import main.visitors.BaseVisitor;
 
 /**
  *	Converts a tree to a JSON String equivalent
+ *
+ *  @author Lang
+ *  @version 1.0
  */
 public class TreeToJsonConverter extends BaseVisitor<StringBuilder> {
 	

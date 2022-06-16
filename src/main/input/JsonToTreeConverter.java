@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
+ * @author Hartmann
+ * @version 1.0
  */
 public class JsonToTreeConverter {
 

@@ -11,6 +11,9 @@ import com.google.gson.JsonParser;
 
 /**
  * The JSONExport is responsible for exporting a given Stringbuilder as a .json-file
+ *
+ * @author Lang
+ * @version 1.0
  */
 public class JSONExport implements IExport{
     /**

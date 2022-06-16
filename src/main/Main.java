@@ -4,7 +4,8 @@ import main.input.ProgramConfiguration;
 
 
 /**
- *
+ * @author Lang, Gavagan, Hartmann
+ * @version 1.0
  */
 public class Main {
 

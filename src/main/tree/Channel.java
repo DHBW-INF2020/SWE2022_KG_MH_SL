@@ -5,6 +5,9 @@ import main.visitors.IVisitor;
 /**
  * A node in the tree representing the
  * attributes of the channel
+ *
+ * @author Gavagan
+ * @version 1.0
  */
 public class Channel extends Node{
 

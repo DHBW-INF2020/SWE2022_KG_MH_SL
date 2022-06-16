@@ -31,6 +31,9 @@ import javax.xml.transform.TransformerException;
 
 /**
  * The XMLExport is responsible for exporting a given Stringbuilder as a .xml-file
+ *
+ * @author Lang
+ * @version 1.0
  */
 public class XMLExport implements IExport{
 

@@ -13,7 +13,7 @@ public class JsonToTeeConverterTest {
     @Test
     /**
      * This Method will perform the unittests
-     *
+     * @author Lang
      * @return True if test passed
      */
     public boolean readInputJson(){

@@ -12,7 +12,7 @@ import java.io.Reader;
 public class InputHandler {
     /**
      * This Method will create a ProgramConfiguration according to the number of Arguments
-     *
+     * @author Hartmann
      * @param Args a String Array that contains the Parameters from Program startup
      * @return ProgramConfiguration the configuration for this iteration of the program
      */
@@ -46,7 +46,7 @@ public class InputHandler {
      * and the according Object of ProgramConfiguration has to be created
      *
      * An Exception will be thrown, if the file doesnt exist
-     *
+     * @author Hartmann
      * @param filepath String of the Path to a JSON Config File
      * @return ProgramConfiguration The Program Configuration created from JSON
      */

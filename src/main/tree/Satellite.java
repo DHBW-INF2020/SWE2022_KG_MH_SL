@@ -5,6 +5,9 @@ import main.visitors.IVisitor;
 /**
  * A node in the tree representing the
  * attributes of the Satellite
+ *
+ * @author Gavagan
+ * @version 1.0
  */
 public class Satellite extends Node{
 

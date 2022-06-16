@@ -7,7 +7,10 @@ import java.util.List;
 import main.visitors.*;
 
 /**
- * The base class of the tree 
+ * The base class of the tree
+ *
+ * @author Gavagan
+ * @version 1.0
  */
 public abstract class Node {
     

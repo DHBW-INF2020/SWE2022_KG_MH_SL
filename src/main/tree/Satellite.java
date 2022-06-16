@@ -3,7 +3,8 @@ package main.tree;
 import main.visitors.IVisitor;
 
 /**
- *
+ * A node in the tree representing the
+ * attributes of the Satellite
  */
 public class Satellite extends Node{
 
@@ -11,8 +12,8 @@ public class Satellite extends Node{
     private String orbital;
     
     /**
-     * @param sat
-     * @param orbital
+     * @param Name of satellite
+     * @param Name of orbital
      */
     public Satellite(String sat, String orbital) {
     	this.sat = replaceQutationMark(sat);
@@ -20,7 +21,7 @@ public class Satellite extends Node{
     }
     
     /**
-     * @param s
+     * @param Sattelite node
      */
     public Satellite(Satellite s) {
     	this.sat = s.sat;
@@ -28,14 +29,14 @@ public class Satellite extends Node{
     }
 
 	/**
-	 * @return
+	 * @return Satellite name
 	 */
 	public String getSat() {
 		return sat;
 	}
 
 	/**
-	 * @return
+	 * @return Orbital name
 	 */
 	public String getOrbital() {
 		return orbital;

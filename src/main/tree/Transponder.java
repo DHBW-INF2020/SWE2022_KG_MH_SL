@@ -3,7 +3,8 @@ package main.tree;
 import main.visitors.IVisitor;
 
 /**
- *
+ * A node in the tree representing the
+ * attributes of the Transponder
  */
 public class Transponder extends Node {
     
@@ -12,9 +13,9 @@ public class Transponder extends Node {
     private String sym;
     
     /**
-     * @param pol
-     * @param freq
-     * @param sym
+     * @param Value of polarization
+     * @param Value of frequency
+     * @param Value of symmetry
      */
     public Transponder(String pol, String freq, String sym) {
     	this.pol = replaceQutationMark(pol);
@@ -23,7 +24,7 @@ public class Transponder extends Node {
     }
     
     /**
-     * @param t
+     * @param Transonder object to copy
      */
     public Transponder(Transponder t) {
     	this.pol = t.pol;
@@ -32,21 +33,21 @@ public class Transponder extends Node {
     }
 
 	/**
-	 * @return
+	 * @return Value of polarization
 	 */
 	public String getPol() {
 		return pol;
 	}
 
 	/**
-	 * @return
+	 * @return Value of frequency
 	 */
 	public String getFreq() {
 		return freq;
 	}
 
 	/**
-	 * @return
+	 * @return Value of symmetry
 	 */
 	public String getSym() {
 		return sym;

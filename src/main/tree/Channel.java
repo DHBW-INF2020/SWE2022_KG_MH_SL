@@ -3,28 +3,29 @@ package main.tree;
 import main.visitors.IVisitor;
 
 /**
- *
+ * A node in the tree representing the
+ * attributes of the channel
  */
 public class Channel extends Node{
 
 	private String name;
     
     /**
-     * @param name
+     * @param Name of channel
      */
     public Channel(String name) {
     	this.name = replaceQutationMark(name);
     }
     
     /**
-     * @param c
+     * @param Channel object to copy
      */
     public Channel(Channel c) {
     	this.name = c.name;
     }
 
 	/**
-	 * @return
+	 * @return Name of channel
 	 */
 	public String getName() {
 		return name;

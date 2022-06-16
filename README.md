@@ -8,7 +8,7 @@ git clone https://github.com/DHBW-INF2020/SWE2022_KG_MH_SL.git
 ```
 
 2. Als Projekt in der eigenen IDE öffnen
-3. Libaries einbinden. Für das Projekt werden die Bibliotheken "gson-2.9.0" und "org.json" verwendet. Zu finden im Ordner "lib"
+3. Libaries einbinden. Für das Projekt werden die Bibliotheken "gson-2.9.0", "org.json", "junit-jupiter-5.8.1" und "junit-jupiter-api-5.8.1" verwendet. Zu finden im Ordner "lib"
 4. Projekt ausführen
    1. Eine der drei möglichen Varianten zur Ausführung verwenden
       1. Aufruf ohne Parameter => standard-debugger der IDE verwendbar
@@ -17,4 +17,14 @@ git clone https://github.com/DHBW-INF2020/SWE2022_KG_MH_SL.git
    2. Die Ausgabe ist im Ordner "output" zu finden
 
 
-### Dokumentation
+## Dokumentation
+### Bekannte Fehler
+Unter Windows failt ein Test, da die Endlines von Linux abweichen
+>Workaround:
+>Programm einmal durchlaufen lassen und dann die output.json je nach Aggregat kopieren und in "test\resources" einfügen und umbenennen
+
+
+### Diagramme
+1. Übersichtsdiagramm
+2. Klassendiagramme
+3. Kontrollflussgraphen

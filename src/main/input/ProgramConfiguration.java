@@ -4,6 +4,7 @@ import org.json.JSONException;
 
 import main.aggregates.ChannelSatellitesAggregate;
 import main.aggregates.SatelliteTranspondersAggregate;
+import main.output.IExport;
 import main.output.JSONExport;
 import main.output.TreeToJsonConverter;
 import main.output.XMLExport;
@@ -150,25 +151,24 @@ public class ProgramConfiguration {
         TreeToJsonConverter outputConverter = new TreeToJsonConverter();
         StringBuilder jsonStringBuilder = (StringBuilder) returnTree.accept(outputConverter);
 
+        IExport exporter;
         // choose output file type according to Config and export
         if(Objects.equals(outputFileType, "xml"))
         {
             // convert JSON String to XML
-            XMLExport export_xml = new XMLExport();
-            export_xml.export(jsonStringBuilder, aggregateType);
+        	exporter = new XMLExport();
         }
         else if (Objects.equals(outputFileType, "json"))
         {
             // Print JSON String to JSON File
-            JSONExport export_json = new JSONExport();
-            export_json.export(jsonStringBuilder, aggregateType);
+        	exporter = new JSONExport();
         }
         else
         {
             System.out.println("unknown File Type - using json now");
-            JSONExport export_json = new JSONExport();
-            export_json.export(jsonStringBuilder, aggregateType);
+            exporter = new JSONExport();
         }
+        exporter.export(jsonStringBuilder, aggregateType);
     }
 
 }
